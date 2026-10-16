@@ -170,7 +170,7 @@ local function runApplication()
     return control
 end
 
-print("fixed autoload credits:Lapriumware")
+
 
 function Backend.initialize(data)
     local root = data[1]
@@ -93562,7 +93562,7 @@ function Backend.loadProgramData()
         [3163] = 8753563,
         [3164] = -4673,
         [3165] = '<j<B= <I=H',
-        [3166] = 'Unnamed Enhancements - I like guys',
+        [3166] = 'Unnamed Enhancements',
         [3167] = 550,
         [3168] = '>\244\23',
         [3169] = 737,
@@ -97850,7 +97850,7 @@ function Backend.loadProgramData()
         [7451] = 'dynamic',
         [7452] = ' URU\22\156\133D\244\18\140\156u\238\15*',
         [7453] = -31817,
-        [7454] = 'Unnamed Enhancements', -- title lol
+        [7454] = 'Unnamed Enhancements', -- title of the script
         [7455] = 'grabs ammo/health drops automatically',
         [7456] = 28515,
         [7457] = 'rbxassetid://446111271',

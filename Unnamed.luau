@@ -46,7 +46,12 @@ local function fallbackBase64Decode(encoded)
     return buffer.tostring(output)
 end
 
-local base64_decode = existingBase64Decode or fallbackBase64Decode
+local base64_decode = function(encoded)
+    if type(encoded) ~= "string" then
+        return ""
+    end
+    return existingBase64Decode and existingBase64Decode(encoded) or fallbackBase64Decode(encoded)
+end
 
 -- CoreGui descendants are capability-gated (lacking capability Plugin) on
 -- threads that are not plugins, so ScreenGui/Highlight containers live in
@@ -7364,32 +7369,32 @@ local function directEntry(...)
                             size = fontSize,
                         }
                     end
-                    local fontSource744 = function()
-                        return base64_decode(embeddedTrueTypeFont1)
+                                        local fontSource744 = function()
+                        return embeddedTrueTypeFont1 and base64_decode(embeddedTrueTypeFont1) or ""
                     end
                     registerFont("smallest pixel", 9, fontSource744)
                     local fontSource745 = function()
-                        return base64_decode(embeddedTrueTypeFont2)
+                        return embeddedTrueTypeFont2 and base64_decode(embeddedTrueTypeFont2) or ""
                     end
                     registerFont("proggy clean", 12, fontSource745)
                     local fontSource746 = function()
-                        return base64_decode(embeddedTrueTypeFont5)
+                        return embeddedTrueTypeFont5 and base64_decode(embeddedTrueTypeFont5) or ""
                     end
                     registerFont("pixel arial", 10, fontSource746)
                     local fontSource747 = function()
-                        return base64_decode(embeddedTrueTypeFont4)
+                        return embeddedTrueTypeFont4 and base64_decode(embeddedTrueTypeFont4) or ""
                     end
                     registerFont("proggy tiny", 9, fontSource747)
                     local fontSource748 = function()
-                        return base64_decode(embeddedTrueTypeFont3)
+                        return embeddedTrueTypeFont3 and base64_decode(embeddedTrueTypeFont3) or ""
                     end
                     registerFont("tahoma", 12, fontSource748)
                     local fontSource749 = function()
-                        return base64_decode(embeddedOpenTypeFont2)
+                        return embeddedOpenTypeFont2 and base64_decode(embeddedOpenTypeFont2) or ""
                     end
                     registerFont("monocraft", 11, fontSource749)
                     local fontSource750 = function()
-                        return base64_decode(embeddedOpenTypeFont3)
+                        return embeddedOpenTypeFont3 and base64_decode(embeddedOpenTypeFont3) or ""
                     end
                     registerFont("monocraft bold", 11, fontSource750)
                     fonts.list = {}
